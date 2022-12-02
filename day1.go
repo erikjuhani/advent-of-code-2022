@@ -67,7 +67,7 @@ func top3TotalMostCalories(h *IntHeap) int {
 	return h.Peek(0) + h.Peek(1) + h.Peek(2)
 }
 
-func day1() error {
+func Day1() error {
 	input, err := readInput()
 	if err != nil {
 		return err
@@ -76,6 +76,6 @@ func day1() error {
 	h := inputToIntHeap(input)
 
 	fmt.Printf("DAY 1 (1/2): %d\n", topMostCalories(h))
-	fmt.Printf("DAY 2 (2/2): %d\n", top3TotalMostCalories(h))
+	fmt.Printf("DAY 1 (2/2): %d\n\n", top3TotalMostCalories(h))
 	return nil
 }

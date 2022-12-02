@@ -3,7 +3,8 @@ package main
 var startFromDay = 1
 
 var adventCalendar []func() error = []func() error{
-	day1,
+	Day1,
+	Day2,
 }
 
 func main() {
