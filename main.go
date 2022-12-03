@@ -5,6 +5,7 @@ var startFromDay = 1
 var adventCalendar []func() error = []func() error{
 	Day1,
 	Day2,
+	Day3,
 }
 
 func main() {
