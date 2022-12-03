@@ -1,11 +1,10 @@
 package main
 
 import (
-	"bufio"
 	"container/heap"
 	"fmt"
-	"os"
 	"strconv"
+	"strings"
 )
 
 // This list represents the Calories of the food carried by five Elves:
@@ -23,25 +22,7 @@ import (
 //
 // Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?
 
-func readInput() ([]string, error) {
-	inputFile, err := os.Open("./day1.input")
-	if err != nil {
-		return nil, err
-	}
-	defer inputFile.Close()
-
-	scanner := bufio.NewScanner(inputFile)
-	scanner.Split(bufio.ScanLines)
-
-	var lines []string
-	for scanner.Scan() {
-		lines = append(lines, scanner.Text())
-	}
-
-	return lines, nil
-}
-
-func inputToIntHeap(input []string) *IntHeap {
+func InputToIntHeap(input []string) *IntHeap {
 	h := &IntHeap{}
 	heap.Init(h)
 
@@ -59,23 +40,24 @@ func inputToIntHeap(input []string) *IntHeap {
 	return h
 }
 
-func topMostCalories(h *IntHeap) int {
+func TopMostCalories(h *IntHeap) int {
 	return h.Peek(0)
 }
 
-func top3TotalMostCalories(h *IntHeap) int {
+func Top3TotalMostCalories(h *IntHeap) int {
 	return h.Peek(0) + h.Peek(1) + h.Peek(2)
 }
 
 func Day1() error {
-	input, err := readInput()
+	input, err := ReadInput("./input/day01")
 	if err != nil {
 		return err
 	}
 
-	h := inputToIntHeap(input)
+	h := InputToIntHeap(strings.Split(input, "\n"))
 
-	fmt.Printf("DAY 1 (1/2): %d\n", topMostCalories(h))
-	fmt.Printf("DAY 1 (2/2): %d\n\n", top3TotalMostCalories(h))
+	fmt.Printf("DAY 1 (1/2): %d\n", TopMostCalories(h))
+	fmt.Printf("DAY 1 (2/2): %d\n\n", Top3TotalMostCalories(h))
+
 	return nil
 }

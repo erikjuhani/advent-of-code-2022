@@ -141,7 +141,7 @@ func RoundWithStrategyGuide(opponent string, challenger string) int {
 }
 
 func Day2() error {
-	input, err := ReadInput("./day02.input")
+	input, err := ReadInput("./input/day02")
 	if err != nil {
 		return err
 	}
