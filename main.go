@@ -6,10 +6,7 @@ import (
 )
 
 var adventCalendar []func() error = []func() error{
-	Day1,
-	Day2,
-	Day3,
-	Day4,
+	Day1, Day2, Day3, Day4, Day5,
 }
 
 func adventDay() int {
