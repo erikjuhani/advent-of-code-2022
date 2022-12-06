@@ -1,50 +1,36 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/erikjuhani/advent-of-code-2022/utils"
+)
 
 func subroutine(input string, length int) int {
-	for i := 0; i < len(input); i++ {
-		j := i + length
-		if j > len(input) {
-			break
-		}
-		if charsDiff(input[i:j]) {
-			return j
+	for i := range input {
+		if len(set([]byte(input[i:i+length]))) == length {
+			return i + length
 		}
 	}
-
 	return 0
 }
 
-func charsDiff(chars string) bool {
-	m := make(map[rune]struct{})
-	for _, r := range chars {
-		if _, ok := m[r]; ok {
-			return false
-		}
-
-		m[r] = struct{}{}
+func set[T comparable](s []T) map[T]struct{} {
+	m := make(map[T]struct{})
+	for _, v := range s {
+		m[v] = struct{}{}
 	}
-
-	return true
-}
-
-func StartOfAPacket(input string) int {
-	return subroutine(input, 4)
-}
-
-func StartOfAMessage(input string) int {
-	return subroutine(input, 14)
+	return m
 }
 
 func Day6() error {
-	input, err := ReadInput("./input/day06")
+	input, err := utils.ReadInput("./input/day06")
 	if err != nil {
 		return err
 	}
 
-	fmt.Printf("DAY 6 (1/2): %d\n", StartOfAPacket(input))
-	fmt.Printf("DAY 6 (2/2): %d\n", StartOfAMessage(input))
+	fmt.Printf("DAY 6 (1/2): %d\n", subroutine(input, 4))
+	fmt.Printf("DAY 6 (2/2): %d\n", subroutine(input, 14))
 
 	return nil
 }

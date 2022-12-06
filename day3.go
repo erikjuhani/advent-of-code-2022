@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"strings"
 	"unicode"
+
+	"github.com/erikjuhani/advent-of-code-2022/utils"
 )
 
 type Compartment map[rune]struct{}
@@ -70,13 +72,13 @@ func Part2(input string) int {
 }
 
 func Day3() error {
-	input, err := ReadInput("./input/day03")
+	input, err := utils.ReadInput("./input/day03")
 	if err != nil {
 		return err
 	}
 
 	fmt.Printf("DAY 3 (1/2): %d\n", Part1(input))
-	fmt.Printf("DAY 3 (2/2): %d\n\n", Part2(input))
+	fmt.Printf("DAY 3 (2/2): %d\n", Part2(input))
 
 	return nil
 }

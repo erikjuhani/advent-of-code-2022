@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+
+	"github.com/erikjuhani/advent-of-code-2022/utils"
 )
 
 type Range struct {
@@ -41,7 +43,7 @@ func NewRange(rawRange []string) (Range, error) {
 }
 
 func Day4() error {
-	input, err := ReadInput("./input/day04")
+	input, err := utils.ReadInput("./input/day04")
 	if err != nil {
 		return err
 	}

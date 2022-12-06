@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+
+	"github.com/erikjuhani/advent-of-code-2022/utils"
 )
 
 // This list represents the Calories of the food carried by five Elves:
@@ -49,7 +51,7 @@ func Top3TotalMostCalories(h *IntHeap) int {
 }
 
 func Day1() error {
-	input, err := ReadInput("./input/day01")
+	input, err := utils.ReadInput("./input/day01")
 	if err != nil {
 		return err
 	}
@@ -57,7 +59,7 @@ func Day1() error {
 	h := InputToIntHeap(strings.Split(input, "\n"))
 
 	fmt.Printf("DAY 1 (1/2): %d\n", TopMostCalories(h))
-	fmt.Printf("DAY 1 (2/2): %d\n\n", Top3TotalMostCalories(h))
+	fmt.Printf("DAY 1 (2/2): %d\n", Top3TotalMostCalories(h))
 
 	return nil
 }

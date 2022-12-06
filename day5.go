@@ -5,6 +5,8 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+
+	"github.com/erikjuhani/advent-of-code-2022/utils"
 )
 
 type Stacks map[int][]byte
@@ -92,7 +94,7 @@ func SolveStacks(stacks Stacks, commands []string, fn StacksMoveFn) string {
 }
 
 func Day5() error {
-	input, err := ReadInput("./input/day05")
+	input, err := utils.ReadInput("./input/day05")
 	if err != nil {
 		return err
 	}

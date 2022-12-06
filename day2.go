@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"strings"
+
+	"github.com/erikjuhani/advent-of-code-2022/utils"
 )
 
 // --- Day 2: Rock Paper Scissors ---
@@ -141,7 +143,7 @@ func RoundWithStrategyGuide(opponent string, challenger string) int {
 }
 
 func Day2() error {
-	input, err := ReadInput("./input/day02")
+	input, err := utils.ReadInput("./input/day02")
 	if err != nil {
 		return err
 	}
@@ -157,7 +159,7 @@ func Day2() error {
 	}
 
 	fmt.Printf("DAY 2 (1/2): %d\n", sum1)
-	fmt.Printf("DAY 2 (2/2): %d\n\n", sum2)
+	fmt.Printf("DAY 2 (2/2): %d\n", sum2)
 
 	return nil
 }

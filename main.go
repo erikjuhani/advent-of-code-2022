@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"time"
 )
@@ -33,5 +34,6 @@ func main() {
 		if err := fn(); err != nil {
 			panic(err)
 		}
+		fmt.Println("---")
 	}
 }
