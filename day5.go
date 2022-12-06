@@ -70,7 +70,7 @@ func StacksFromInput(input []string) Stacks {
 	return stacks
 }
 
-func Solve(stacks Stacks, commands []string, fn StacksMoveFn) string {
+func SolveStacks(stacks Stacks, commands []string, fn StacksMoveFn) string {
 	for _, c := range commands {
 		fn(stacks)(ParseCommand(c))
 	}
@@ -109,8 +109,8 @@ func Day5() error {
 	data := d[:len(d)-1]
 	commands := c[:len(c)-1]
 
-	fmt.Printf("DAY 5 (1/2): %s\n", Solve(StacksFromInput(data), commands, MoveOne))
-	fmt.Printf("DAY 5 (2/2): %s\n", Solve(StacksFromInput(data), commands, MoveAll))
+	fmt.Printf("DAY 5 (1/2): %s\n", SolveStacks(StacksFromInput(data), commands, MoveOne))
+	fmt.Printf("DAY 5 (2/2): %s\n", SolveStacks(StacksFromInput(data), commands, MoveAll))
 
 	return nil
 }

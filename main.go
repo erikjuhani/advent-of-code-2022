@@ -7,6 +7,7 @@ import (
 
 var adventCalendar []func() error = []func() error{
 	Day1, Day2, Day3, Day4, Day5,
+	Day6,
 }
 
 func adventDay() int {
